@@ -7,20 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Норм такой документ</title>
     <link rel="stylesheet" href="{% static 'main/css/layout.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,900&display=swap" rel="stylesheet">
+    {% block 'links' %}{% endblock %}
 </head>
 <body>
     <div id="header">
-        <h3 class="logo_phrase">Fuwa Fuwa Phrase</h3>
-        <h2 class="main_headline">Словами можно сделать больше</h2>
+        <div id="logo">
+            <h2 class="logo_phrase">Fuwa Fuwa Phrase</h2>
+        </div>
 
+        <div id="center_headline_block">
+
+            <h2 class="main_headline">Словами можно сделать больше!</h2>
+        </div>
     </div>
 
-    <div id="center">
-        <h1>Этот заголовок большой</h1>
-        <h6>А этот еще не вырос блинб</h6>
-        <p>А это текст ему ваще по кайфу</p>
-        <b><a href="https://vk.com">сыыл</a></b>
-        <a href="https://vk.com">сыыл</a><button href="">kaka</button>
+    <div id="aside">
+        <ul>
+            <a href="{% url 'main_page' %}"><li>Главная</li></a>
+            <a href="{% url 'adding_page' %}"><li>Добавить слов</li></a>
+        </ul>
     </div>
+
+    {% block 'center' %}
+    {% endblock %}
 </body>
 </html>

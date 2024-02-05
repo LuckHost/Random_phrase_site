@@ -1,0 +1,39 @@
+h1 {
+    font-family: 'Manrope', sans-serif;
+}
+
+#center_info_block {
+    margin-top: 60px;
+    color: azure;
+    margin-left: 210px;
+    float: left;
+    z-index: 2;
+    padding: 30px;
+    padding-top: 10px;
+    background-color: rgb(70, 141, 221);
+    border-radius: 10px 50px 10px 50px;
+}
+
+#center_info2_block {
+    margin-top: 60px;
+    color: azure;
+    margin-left: 40px;
+    float: left;
+    z-index: 2;
+    padding: 30px;
+    padding-top: 10px;
+    background-color: rgb(161, 70, 221);
+    border-radius: 10px 50px 10px 50px;
+}
+
+#center_main_block{
+    float: left;
+    background-color: aliceblue;
+    padding: 30px;
+    padding-top: 10px;
+    margin-top: 60px;
+    margin-left: 210px;
+    border: 3px solid;
+    border-color: rgb(175, 23, 23);
+    border-radius: 50px;
+}

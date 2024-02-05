@@ -1,0 +1,31 @@
+{% include 'main/layout.html' %}
+{% load static %}
+
+{% block 'links' %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/main_page.css' %}">
+{% endblock %}
+
+{% block 'center' %}
+    <div id="center_info_block">
+        <h1>
+            Настрой слова сам, <br>или же просто доверь все случайности!
+        </h1>
+    </div>
+
+    <div id="center_info2_block">
+        <h1>
+            А здесь будет всякий выбор слов наверное но <br> я не уврен хз как делать чекбок
+
+        </h1>
+    </div>
+
+    <div id="center_main_block">
+        <h1>
+            А здесь будет всякий выбор слов наверное но <br> я не уврен хз как делать чекбок
+
+        </h1>
+    </div>
+{% endblock %}
