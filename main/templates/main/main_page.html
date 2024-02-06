@@ -18,8 +18,13 @@
     <div id="center_info2_block">
         <h1>
             А здесь будет всякий выбор слов наверное но <br> я не уврен хз как делать чекбок
-
         </h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="checkbox" name="Бегемоты">
+            <input type="checkbox" name="Не бегемоты">
+            <button type="submit">Сгенерировать</button>
+        </form>
     </div>
 
     <div id="center_main_block">
