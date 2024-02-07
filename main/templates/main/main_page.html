@@ -23,7 +23,7 @@
             {% csrf_token %}
             {{ form }}
             {% if print %}
-                <input type="checkbox" name="Бегемоты">
+                <input type="checkbox" name="Бегемоты", name = 'tag[]'>
                 <input type="checkbox" name="Не бегемоты">
             {% endif %}
             <button type="submit">Сгенерировать</button>

@@ -11,3 +11,5 @@ class Words(models.Model):
         return self.word
     
     
+class Checkbox(models.Model):
+    checkbox_model = models.BooleanField()

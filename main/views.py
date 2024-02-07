@@ -7,15 +7,11 @@ from django.http import HttpResponseRedirect
 def main_page(request):
     words = Words.objects.all()
     print = False
-    if request.method == "POST":
-        form = MainpageCheckbox(request.POST)
-        if form.is_valid():
-            if request.POST["is_funny"]:
-                print = True
-            else:
-                print = False
-    else:
-        form = MainpageCheckbox()
+    if request.method == 'POST':
+        fruits = request.POST.getlist('fruits')
+        if "бегемот" in fruits:
+            print = True
+    form = MainpageCheckbox()
     return render(request, 'main/main_page.html', {'data': words, 'form': form, 'print': print})
 
 def add_words(request):
