@@ -21,8 +21,11 @@
         </h1>
         <form method="post">
             {% csrf_token %}
-            <input type="checkbox" name="Бегемоты">
-            <input type="checkbox" name="Не бегемоты">
+            {{ form }}
+            {% if print %}
+                <input type="checkbox" name="Бегемоты">
+                <input type="checkbox" name="Не бегемоты">
+            {% endif %}
             <button type="submit">Сгенерировать</button>
         </form>
     </div>

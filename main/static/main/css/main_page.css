@@ -17,8 +17,8 @@ h1 {
 #center_info2_block {
     margin-top: 60px;
     color: azure;
-    margin-left: 40px;
-    float: left;
+    margin-right: 30px;
+    float: right;
     z-index: 2;
     padding: 30px;
     padding-top: 10px;

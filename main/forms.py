@@ -1,4 +1,4 @@
 from django import forms
 
-class MainpageCheckbox(forms.ModelForm):
-    is_funny = forms.BooleanField()
+class MainpageCheckbox(forms.Form):
+    is_funny = forms.BooleanField(required=False)
