@@ -1,4 +1,4 @@
-h1 {
+h1, h4 {
     font-family: 'Manrope', sans-serif;
 }
 
@@ -11,28 +11,31 @@ h1 {
     padding: 30px;
     padding-top: 10px;
     background-color: rgb(70, 141, 221);
-    border-radius: 10px 50px 10px 50px;
+    border-radius: 10px 50px 50px 50px;
 }
 
 #center_info2_block {
     margin-top: 60px;
     color: azure;
     margin-right: 30px;
+    margin-left: 210px;
     float: right;
     z-index: 2;
     padding: 30px;
     padding-top: 10px;
     background-color: rgb(161, 70, 221);
-    border-radius: 10px 50px 10px 50px;
+    border-radius: 50px 50px 10px 50px;
 }
 
 #center_main_block{
     float: left;
     background-color: aliceblue;
+    width: 75vmax;
     padding: 30px;
     padding-top: 10px;
     margin-top: 60px;
     margin-left: 210px;
+    margin-right: 50px;
     border: 3px solid;
     border-color: rgb(175, 23, 23);
     border-radius: 50px;
