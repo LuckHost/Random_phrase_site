@@ -2,9 +2,6 @@
 {% load static %}
 
 {% block 'links' %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'main/css/main_page.css' %}">
 {% endblock %}
 
@@ -19,23 +16,15 @@
         <h1>
             А здесь будет всякий выбор слов наверное но <br> я не уврен хз как делать чекбок
         </h1>
-        <form method="post">
+        <form method="post", action={% url 'result_output' %}>
             {% csrf_token %}
-            {{ form }}
-            {% if print %}
-                <input type="checkbox" name="Бегемоты", name = 'tag[]'>
-                <input type="checkbox" name="Не бегемоты">
-            {% endif %}
+            <input type="checkbox" name="checkboxes", id="is_alive", value="animal">
+            <input type="checkbox" name="checkboxes", id="is_funny", value="funny">
+            <input type="checkbox" name="checkboxes", id="is_alive", value="animal">
+            <input type="checkbox" name="checkboxes", id="is_funny", value="funny">
+            <input type="checkbox" name="checkboxes", id="is_alive", value="animal">
+            <input type="checkbox" name="checkboxes", id="is_funny", value="funny">
             <button type="submit">Сгенерировать</button>
         </form>
-    </div>
-
-    <div id="center_main_block">
-        <h1>
-            {% for i in data %}
-                <h4>{{ i }}</h4>
-            {% endfor %}
-
-        </h1>
     </div>
 {% endblock %}

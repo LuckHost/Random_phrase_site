@@ -5,10 +5,15 @@ from django.http import HttpResponseRedirect
 
 # Create your views here.
 def main_page(request):
-    words_base = Words.objects.all()
-    print = False
+    return render(request, 'main/main_page.html')
+
+def add_words(request):
+    return render(request, 'main/adding_page.html')
+
+def result_output(request):
     if request.method == 'POST':
-        words = request.POST.getlist('is_funny', 'is_animals')
+        words_base = Words.objects.all()
+        words = request.POST.getlist('checkboxes')
         if "funny" in words:
             words_base = words_base.filter(mood_type='fun')
         else:
@@ -20,7 +25,4 @@ def main_page(request):
             words_base = words_base.filter(alive=False)
          
     form = MainpageCheckbox()
-    return render(request, 'main/main_page.html', {'data': words_base, 'form': form, 'print': print})
-
-def add_words(request):
-    return render(request, 'main/adding_page.html')
+    return render(request, 'main/result_output.html', {"data": words_base})
