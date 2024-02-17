@@ -5,15 +5,12 @@
 {% endblock %}
 {% block 'center' %}
 <div id="center_main_block">
-    <h1>
-        {% if data.len() == 0 %}
-            <h1>ну ты поц</h1>
-        {% else %}
-            {% for i in data %}
-                <h4>{{ i }}</h4>
-            {% endfor %}
-        {% endif %}
-
-    </h1>
+    {% if not data %}
+        <h1>ты поц</h1>
+    {% else %}
+        {% for i in data %}
+            <h4>{{ i }}</h4>
+        {% endfor %}
+    {% endif %}
 </div>
 {% endblock %}

@@ -18,12 +18,8 @@
         </h1>
         <form method="post", action={% url 'result_output' %}>
             {% csrf_token %}
-            <input type="checkbox" name="checkboxes", id="is_alive", value="animal">
-            <input type="checkbox" name="checkboxes", id="is_funny", value="funny">
-            <input type="checkbox" name="checkboxes", id="is_alive", value="animal">
-            <input type="checkbox" name="checkboxes", id="is_funny", value="funny">
-            <input type="checkbox" name="checkboxes", id="is_alive", value="animal">
-            <input type="checkbox" name="checkboxes", id="is_funny", value="funny">
+            <input type="checkbox" name="checkboxes", id="is_alive", value="alive">
+            <input type="checkbox" name="checkboxes", id="gender", value="male">
             <button type="submit">Сгенерировать</button>
         </form>
     </div>
