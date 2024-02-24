@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from main.models import Rusnounsmorfs
-from .forms import MainpageCheckbox
+from main.models import Allwords, Rusnounsmorfs
+import random
 
 def main_page(request):
     return render(request, 'main/main_page.html')
@@ -10,21 +10,27 @@ def add_words(request):
 
 def result_output(request):
     if request.method == 'POST':
-        words_base = Rusnounsmorfs.objects.all()
+        words_base = Allwords.objects
+        words_nouns = Rusnounsmorfs.objects
+        
         words = request.POST.getlist('checkboxes')
         if "male" in words:
-            words_base = words_base.filter(gender='муж')
-        else:
-            words_base = words_base.filter(gender='жен')
-            
+            words_nouns = words_nouns.filter(gender='муж')
+        elif "fem" in words:
+            words_nouns = words_nouns.filter(gender='жен')
+        elif "neut" in words:
+            words_nouns.filter(gender='ср')
+               
         if "alive" in words:
-            words_base = words_base.filter(soul=1)
+            words_nouns = words_nouns.filter(soul=1)
         else:
-            words_base = words_base.filter(soul=0)
+            words_nouns = words_nouns.filter(soul=0)
             
         output = []
-        for i in range(43, 43 + 10):
-            output.append(words_base[i])
-         
-    form = MainpageCheckbox()
+        
+        output.append(random.choice(words_nouns.filter(wcase="им")))
+        output.append(random.choice(words_base.filter(type="гл").filter(face='3-е')))
+        output.append(random.choice(words_base.filter(type="прл").filter(wcase="вин").filter(soul=1)))
+        output.append(random.choice(words_nouns.filter(wcase="род")))
+            
     return render(request, 'main/result_output.html', {"data": output})

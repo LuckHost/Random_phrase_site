@@ -6,8 +6,6 @@
 #header{
     color: black;
     background-color: rgb(140, 138, 231);
-    float: left;
-    position: fixed;
     height: 50px;
     z-index: 3;
     top: 0;
@@ -24,7 +22,6 @@
     padding: 20px;
     height: 100vh;
     position: fixed;
-    margin-top: 50px;
 }
 
 #center_headline_block {

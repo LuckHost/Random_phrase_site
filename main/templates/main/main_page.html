@@ -14,12 +14,39 @@
 
     <div id="center_info2_block">
         <h1>
-            А здесь будет всякий выбор слов наверное но <br> я не уврен хз как делать чекбок
+            Я хочу видеть во фразе.. <br>
         </h1>
+        
+    </div>
+    <div id="bottom_user_input_block">
         <form method="post", action={% url 'result_output' %}>
             {% csrf_token %}
-            <input type="checkbox" name="checkboxes", id="is_alive", value="alive">
-            <input type="checkbox" name="checkboxes", id="gender", value="male">
+            <label>Добавим что-то живое!</label>
+            <input type="checkbox" name="checkboxes", id="is_alive", value="alive"><br>
+            <fieldset>
+                <legend>Род будет:</legend>
+
+                <div>
+                  <input type="radio" id="male" name="checkboxes" value="male" checked />
+                  <label for="male">Мужской</label>
+                </div>
+              
+                <div>
+                  <input type="radio" id="fem" name="checkboxes" value="fem" />
+                  <label for="fem">Женсикй</label>
+                </div>
+              
+                <div>
+                  <input type="radio" id="neut" name="checkboxes" value="neut" />
+                  <label for="neut">Средний</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="neut" name="checkboxes" value="neut" />
+                    <label for="neut">Средний</label>
+                </div>
+
+              </fieldset>
             <button type="submit">Сгенерировать</button>
         </form>
     </div>
