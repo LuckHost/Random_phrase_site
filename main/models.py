@@ -11,6 +11,12 @@ class Rusnounsmorfs(models.Model):
     wcase = models.CharField(max_length=4, blank = False)
     soul = models.SmallIntegerField(blank=False)
     
+    def getPlural(self):
+        return self.plural
+    
+    def getGender(self):
+        return self.gender
+    
     def __str__(self):
         return self.word
     
@@ -36,6 +42,9 @@ class Allwords(models.Model):
     vozv = models.SmallIntegerField(null = True)
     nakl = models.CharField(max_length=5, null = True)
     short = models.SmallIntegerField(null = True)
+    
+    def getGender(self):
+        return self.gender
     
     def __str__(self):
         return self.word

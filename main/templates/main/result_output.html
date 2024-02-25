@@ -5,12 +5,16 @@
 {% endblock %}
 {% block 'center' %}
 <div id="center_main_block">
-    {% if not data %}
+    <div class="main_phrase_output">
+        {% if not data %}
         <h1>ты поц</h1>
-    {% else %}
-        {% for i in data %}
-            <h4>{{ i }}</h4>
-        {% endfor %}
-    {% endif %}
+        {% else %}
+        <h1>
+            {% for i in data %}
+                {{ i }}
+            {% endfor %}
+        </h1>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
