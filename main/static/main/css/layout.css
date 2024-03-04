@@ -15,8 +15,7 @@
 }
 
 #aside {
-    background-color: black;
-    color: beige;
+    color: rgb(3, 3, 3);
     float: left;
     width: 150px;
     padding: 20px;

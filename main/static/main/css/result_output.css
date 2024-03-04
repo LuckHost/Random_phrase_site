@@ -9,7 +9,7 @@
     border: 3px solid;
     border-color: rgb(175, 23, 23);
     border-radius: 50px;
-    position: absolute;
+    position: relative;
     width: 84vw;
 }
 
@@ -23,4 +23,19 @@
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
     text-align: center
+}
+
+#words_explanations {
+    float: left;
+    background-color: aliceblue;
+    padding: 30px;
+    padding-top: 10px;
+    margin-top: 60px;
+    margin-left: 210px;
+    margin-right: 50px;
+    border: 3px solid;
+    border-color: rgb(175, 23, 23);
+    border-radius: 50px;
+    position: relative;
+    width: 84vw;
 }

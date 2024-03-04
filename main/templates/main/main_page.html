@@ -14,36 +14,41 @@
 
     <div id="center_info2_block">
         <h1>
-            Я хочу видеть во фразе.. <br>
+            Дай подумать.. <br>
         </h1>
         
     </div>
     <div id="bottom_user_input_block">
         <form method="post", action={% url 'result_output' %}>
             {% csrf_token %}
+            <fieldset class="words_content">
+                <legend>Количество слов пусть будет..</legend>
+
+                <input type="radio" class="words_count_4" name="words_content" value="4" />
+                <label for="male">4</label><br>
+                
+                <input type="radio" class="words_count_6" name="words_content" value="6" />
+                <label for="fem">6</label><br>
+                
+                <input type="radio" class="words_count_12" name="words_content" value="12" />
+                <label for="neut">12</label><br>
+            </fieldset>
             <label>Добавим что-то живое!</label>
-            <input type="checkbox" name="checkboxes", id="is_alive", value="alive"><br>
-            <fieldset>
+            <input type="checkbox" name="checkboxes" id="is_alive" value="alive"><br>
+
+            <fieldset class="gender_choise">
+
                 <legend>Род будет:</legend>
 
                 <div>
-                  <input type="radio" id="male" name="checkboxes" value="male" checked />
+                  <input type="radio" class="male" name="gender_choise" value="male" />
                   <label for="male">Мужской</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="fem" name="checkboxes" value="fem" />
+                
+                  <input type="radio" class="fem" name="gender_choise" value="fem" />
                   <label for="fem">Женсикй</label>
-                </div>
-              
-                <div>
-                  <input type="radio" id="neut" name="checkboxes" value="neut" />
+               
+                  <input type="radio" class="neut" name="gender_choise" value="neut" />
                   <label for="neut">Средний</label>
-                </div>
-
-                <div>
-                    <input type="radio" id="neut" name="checkboxes" value="neut" />
-                    <label for="neut">Средний</label>
                 </div>
 
               </fieldset>

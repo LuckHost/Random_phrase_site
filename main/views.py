@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from main.models import Allwords, Rusnounsmorfs
 import random
+import wikipedia
 
 def main_page(request):
     return render(request, 'main/main_page.html')
@@ -13,29 +14,44 @@ def result_output(request):
         words_base = Allwords.objects
         words_nouns = Rusnounsmorfs.objects
         
-        words = request.POST.getlist('checkboxes')
-        if "male" in words:
+        gender_choise = request.POST.getlist('gender_choise')
+        if "male" in gender_choise:
             words_nouns = words_nouns.filter(gender='муж')
-        elif "fem" in words:
+        elif "fem" in gender_choise:
             words_nouns = words_nouns.filter(gender='жен')
-        elif "neut" in words:
+        elif "neut" in gender_choise:
             words_nouns.filter(gender='ср')
-               
-        if "alive" in words:
+            
+        checkboxes = request.POST.getlist('checkboxes')       
+        if "alive" in checkboxes:
             words_nouns = words_nouns.filter(soul=1)
         else:
             words_nouns = words_nouns.filter(soul=0)
             
-        output = []
+        """
         
-        output.append(random.choice(words_nouns.filter(wcase="им")))
-        output.append(random.choice(words_nouns.filter(wcase="род")))
+        First sentence structure:
+        noun (main), 
+        verb (main, describes what the main noun did to the second one), 
+        adjective (describes the object on which the action was performed), 
+        noun (on which the action is performed)
         
-        output.append(random.choice(words_base.filter(type="гл").filter(perfect=1).filter(vozv=0).filter(gender=output[0].getGender())))
-        output.append(random.choice(words_base.filter(type="прл").filter(wcase="вин").filter(soul=1).filter(plural=output[1].getPlural())))
+        Example:
+        сопровождающий зашпионил афганского бытовика
         
-        output = [output[0], output[2], output[3], output[1]]
+        dict.1.1.20240302T054823Z.fa50e547815bb194.ec3bbd6c994fa6b3328447e294e4afff8a2f05bd
         
+        """    
+        firts_sentence = []
+        firts_sentence.append(random.choice(words_nouns.filter(wcase="им")))
+        firts_sentence.append(random.choice(words_nouns.filter(wcase="род")))
+        firts_sentence.append(random.choice(words_base.filter(type="гл").filter(perfect=1).filter(vozv=0).filter(gender=firts_sentence[0].getGender())))
+        firts_sentence.append(random.choice(words_base.filter(type="прч").filter(wcase="вин").filter(soul=1).filter(nakl='страд').filter(plural=firts_sentence[1].getPlural())))
+        firts_sentence = [firts_sentence[0], firts_sentence[2], firts_sentence[3], firts_sentence[1]]
         
+        wikipedia.set_lang("ru")
+        explanations = [wikipedia.summary(firts_sentence[0])]
+        
+
             
-    return render(request, 'main/result_output.html', {"data": output})
+    return render(request, 'main/result_output.html', {"data": firts_sentence, "explanations": explanations})
