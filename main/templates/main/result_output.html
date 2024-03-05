@@ -16,17 +16,17 @@
         </h1>
         {% endif %}
     </div>
+    {% for i in explanations %}
+        <div id="words_explanations">
+            {% if not explanations %}
+                <h1>Пояснений слов не нашлось!</h1>
+            {% else %}
+            <h1>
+                {{ i }}
+            </h1>
+            {% endif %}
+        </div>
+    {% endfor %}
 </div>
-{% for i in explanations %}
-    <div id="words_explanations">
-        {% if not explanations %}
-            <h1>Пояснений слов не нашлось!</h1>
-        {% else %}
-        <h1>
-            {{ i }}
-        </h1>
-        {% endif %}
-    </div>
-{% endfor %}
 
 {% endblock %}
