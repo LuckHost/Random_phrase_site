@@ -6,37 +6,36 @@
 {% endblock %}
 
 {% block 'center' %}
-    <dev id="main_content_block">
+    <div id="main_content_block">
         <div id="center_info_block">
             <h1>
                 Настрой слова сам, <br>или же просто доверь все случайности!
             </h1>
         </div>
-
-    <div id="center_info2_block">
-        <h1>
-            Дай подумать.. <br>
-        </h1>
-        
-    </div>
-    <div id="bottom_user_input_block">
-        <form method="post", action={% url 'result_output' %}>
-            {% csrf_token %}
-            <div class="gender_choise">
-                <legend>Род главного слова будет:</legend>
-                <div>
-                  <input type="radio" id="male" name="gender_choise" value="male" />
-                  <label for="male">Мужской</label>
+        <div id="center_info2_block">
+            <h1>
+                Дай подумать.. <br>
+            </h1>
+        </div>
+        <div id="bottom_user_input_block">
+            <form method="post", action={% url 'result_output' %}>
+                {% csrf_token %}
+                <div class="gender_choise">
+                    <legend>Род главного слова будет:</legend>
+                    <div>
+                    <input type="radio" id="male" name="gender_choise" value="male" />
+                    <label for="male">Мужской</label>
+                    
+                    <input type="radio" id="fem" name="gender_choise" value="fem" />
+                    <label for="fem">Женсикй</label>
                 
-                  <input type="radio" id="fem" name="gender_choise" value="fem" />
-                  <label for="fem">Женсикй</label>
-               
-                  <input type="radio" id="neut" name="gender_choise" value="neut" />
-                  <label for="neut">Средний</label>
-                </div>
+                    <input type="radio" id="neut" name="gender_choise" value="neut" />
+                    <label for="neut">Средний</label>
+                    </div>
 
-            </div>
-            <button type="submit">Сгенерировать</button>
-        </form>
+                </div>
+                <button type="submit">Сгенерировать</button>
+            </form>
+        </div>
     </div>
 {% endblock %}

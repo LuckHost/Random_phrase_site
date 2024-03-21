@@ -2,10 +2,6 @@ h1, h4 {
     font-family: 'Manrope', sans-serif;
 }
 
-#main_content_block {
-    position: relative;
-}
-
 #center_info_block {
     z-index: 2;
     position: relative;
