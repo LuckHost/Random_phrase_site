@@ -3,12 +3,13 @@ h1, h4 {
 }
 
 #center_info_block {
+    z-index: 2;
+    position: relative;
     margin-top: 20px;
     color: azure;
-    margin-left: 210px;
+    margin-left: 260px;
     margin-right: 210px;
     float: left;
-    z-index: 2;
     padding: 30px;
     padding-top: 10px;
     background-color: rgb(42, 127, 224);
@@ -16,12 +17,13 @@ h1, h4 {
 }
 
 #center_info2_block {
+    z-index: 2;
+    position: relative;
     margin-top: 168px;
     color: azure;
     margin-right: 130px;
-    margin-left: 210px;
+    margin-left: 260px;
     float: right;
-    z-index: 2;
     padding: 30px;
     padding-top: 10px;
     background-color: rgb(123, 196, 255);
@@ -35,16 +37,50 @@ h1, h4 {
 }
 
 #bottom_user_input_block {
+    z-index: 2;
     margin-bottom: 60px;
     margin-top: 30px;
     position: absolute;
     bottom: 0;
-    margin-right: 30px;
-    margin-left: 210px;
+    margin-right: 40%;
+    margin-left: 40%;
     padding: 50px;
     border: 6px solid rgb(128, 101, 247);
     border-radius: 40px 40px 40px 40px;
     font-family: 'Manrope', sans-serif;
 }
 
-input[type="radio"]:checked+label { font-weight: bold; }
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+}
+
+label {
+    color: rgb(128, 101, 247);
+    background-color: rgb(123, 196, 255);
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 20px;
+  }
+
+input[type="radio"]:checked+label { 
+    font-weight: bold;
+    color: rgb(123, 196, 255);
+    background: rgb(128, 101, 247); 
+}
+
+input[type=radio] + label {
+    border-left: solid 6px rgb(128, 101, 247), 60%;
+}
+
+.gender_choise {
+    text-align: center;
+    border: solid 6px rgb(123, 196, 255);
+    display: inline-block;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 270px;
+}

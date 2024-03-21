@@ -2,6 +2,7 @@ from django.shortcuts import render
 from main.models import Allwords, Rusnounsmorfs
 import random
 import wikipedia
+import asyncio
 
 def main_page(request):
     return render(request, 'main/main_page.html')
@@ -9,10 +10,23 @@ def main_page(request):
 def add_words(request):
     return render(request, 'main/adding_page.html')
 
+def get_explanations(sentence):
+    explanation = {}
+    wikipedia.set_lang("ru")
+    for i in sentence:
+        try:
+            wiki_answer = wikipedia.summary(i, sentences=6)
+            explanation |= {"word": i}
+            explanation |= {"wiki_answer": wiki_answer}
+            return explanation
+        except:
+            pass
+
 def result_output(request):
-    if request.method == 'POST':
+    if request.method == 'POST':  
         words_base = Allwords.objects
         words_nouns = Rusnounsmorfs.objects
+        words_nouns = words_nouns.filter(soul=1)
         
         gender_choise = request.POST.getlist('gender_choise')
         if "male" in gender_choise:
@@ -21,12 +35,6 @@ def result_output(request):
             words_nouns = words_nouns.filter(gender='жен')
         elif "neut" in gender_choise:
             words_nouns.filter(gender='ср')
-            
-        checkboxes = request.POST.getlist('checkboxes')       
-        if "alive" in checkboxes:
-            words_nouns = words_nouns.filter(soul=1)
-        else:
-            words_nouns = words_nouns.filter(soul=0)
             
         """
         
@@ -39,8 +47,6 @@ def result_output(request):
         Example:
         сопровождающий зашпионил афганского бытовика
         
-        dict.1.1.20240302T054823Z.fa50e547815bb194.ec3bbd6c994fa6b3328447e294e4afff8a2f05bd
-        
         """    
         firts_sentence = []
         firts_sentence.append(random.choice(words_nouns.filter(wcase="им")))
@@ -49,9 +55,6 @@ def result_output(request):
         firts_sentence.append(random.choice(words_base.filter(type="прч").filter(wcase="вин").filter(soul=1).filter(nakl='страд').filter(plural=firts_sentence[1].getPlural())))
         firts_sentence = [firts_sentence[0], firts_sentence[2], firts_sentence[3], firts_sentence[1]]
         
-        wikipedia.set_lang("ru")
-        explanations = [wikipedia.summary(firts_sentence[0])]
-        
+        explanations = get_explanations(firts_sentence)
 
-            
     return render(request, 'main/result_output.html', {"data": firts_sentence, "explanations": explanations})

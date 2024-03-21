@@ -28,11 +28,14 @@
 
     <div id="aside">
         <ul>
-            <a href="{% url 'main_page' %}"><li>Главная</li></a>
-            <a href="{% url 'adding_page' %}"><li>Добавить слов</li></a>
+            <form action="{% url 'main_page' %}">
+                <button type="submit" class ="main_page_link_button">Главная</button>
+            </form>
+            <form action="https://github.com/LuckHost/Random_phrase_site">
+                <button type="submit" class ="github_button">GitHub</button>
+            </form>
         </ul>
     </div>
-
     {% block 'center' %}
     {% endblock %}
 </body>

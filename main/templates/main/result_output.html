@@ -3,11 +3,12 @@
 {% block 'links' %}
     <link rel="stylesheet" href="{% static 'main/css/result_output.css' %}">
 {% endblock %}
+
 {% block 'center' %}
 <div id="center_main_block">
     <div class="main_phrase_output">
         {% if not data %}
-        <h1>ты поц</h1>
+        <h1>Что-то пошло не так..</h1>
         {% else %}
         <h1>
             {% for i in data %}
@@ -17,16 +18,13 @@
         {% endif %}
     </div>
 </div>
-{% for i in explanations %}
-    <div id="words_explanations">
-        {% if not explanations %}
-            <h1>Пояснений слов не нашлось!</h1>
-        {% else %}
-        <h1>
-            {{ i }}
-        </h1>
-        {% endif %}
-    </div>
-{% endfor %}
-
+<div id="words_explanations">
+    {% if explanations.word != "" %}
+        <h2>По слову "{{ explanations.word }}" википедия говорит:</h2>
+        <h3>{{ explanations.wiki_answer }}</h3>
+    {% else %}
+        <h1>Вы счастливчик!</h1>
+        <h3>Википедия не нашла ни одного слова! Это значит, что предложение получилось сложное :)</h3>
+    {% endif %}
+</div>
 {% endblock %}

@@ -2,8 +2,11 @@
     margin: 0;
     padding: 0;
 }
+body {
+    background: #dbdbdb;
+}
 
-#header{
+#header {
     color: black;
     background-color: rgb(140, 138, 231);
     height: 50px;
@@ -15,11 +18,18 @@
 }
 
 #aside {
+    z-index: 1;
     color: rgb(3, 3, 3);
+    background-color:rgb(243, 243, 243);
     float: left;
+    border-radius: 5vh 5vh 5vh 5vh;
+    border: 6px solid rgb(140, 138, 231);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
     width: 150px;
     padding: 20px;
-    height: 100vh;
+    height: 85%;
     position: fixed;
 }
 
@@ -45,7 +55,7 @@
     position: relative;
     color: azure;
     font-family: 'Kanit', sans-serif;
-    left: 40px;
+    margin-left: 40px;
     z-index: 5;
     top: 5px;
 }
@@ -76,5 +86,41 @@
     vertical-align: middle;
     top: 12px;
 }
+
+.main_page_link_button {
+    padding: 11px 16px;
+    margin-bottom: 15px;
+    width: 150px;
+    border: 1px solid rgb(166, 135, 201);
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(166, 135, 201);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.2s;
+}
+.main_page_link_button:hover {
+    background-color: rgb(255, 255, 255); /* Зеленый */
+    color: rgb(166, 135, 201);
+    transition: 0.2s;
+  }
+
+.github_button {
+    padding: 11px 16px;
+    width: 150px;
+    border: 1px outset rgb(44, 44, 44);
+    border-radius: 8px;
+    color: rgb(238, 238, 238);
+    background-color: rgb(49, 49, 49);
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.github_button:hover {
+    background-color: #d3d3d3; /* Зеленый */
+    color: rgb(44, 44, 44);
+    transition: 0.2s;
+  }
 
 

@@ -3,14 +3,13 @@
     background-color: aliceblue;
     padding: 30px;
     padding-top: 10px;
-    margin-top: 60px;
-    margin-left: 210px;
-    margin-right: 50px;
+    margin-top: 40px;
+    margin-left: 260px;
+    margin-right: 210px;
     border: 3px solid;
     border-color: rgb(175, 23, 23);
     border-radius: 50px;
     position: relative;
-    width: 84vw;
 }
 
 .main_phrase_output {
@@ -22,7 +21,7 @@
     margin-inline-end: 0px;
     font-weight: bold;
     font-family: 'Manrope', sans-serif;
-    text-align: center
+    text-align: center;
 }
 
 #words_explanations {
@@ -31,11 +30,11 @@
     padding: 30px;
     padding-top: 10px;
     margin-top: 60px;
-    margin-left: 210px;
-    margin-right: 50px;
+    margin-left: 260px;
+    margin-right: 210px;
     border: 3px solid;
     border-color: rgb(175, 23, 23);
     border-radius: 50px;
     position: relative;
-    width: 84vw;
+    font-family: 'Manrope', sans-serif;
 }
