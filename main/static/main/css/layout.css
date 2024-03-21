@@ -45,12 +45,6 @@ body {
     margin-top: -35px;
 }
 
-@media screen and (max-width: 1465px){
-    #center_headline_block {
-        width: 400px;
-    }
-}
-
 .logo_phrase {
     position: relative;
     color: azure;
@@ -58,6 +52,13 @@ body {
     margin-left: 40px;
     z-index: 5;
     top: 5px;
+}
+
+@media screen and (max-width: 1465px){
+    #center_headline_block {
+        width: 400px;
+        font-size: 70%;
+    }
 }
 
 .logo_mini_phrase {

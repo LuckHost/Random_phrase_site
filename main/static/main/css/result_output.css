@@ -1,4 +1,17 @@
 #center_main_block {
+    position: relative;
+}
+
+.main_phrase_output {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+    text-align: center;
     float: left;
     background-color: aliceblue;
     padding: 30px;
